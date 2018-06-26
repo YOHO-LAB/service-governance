@@ -1,7 +1,7 @@
 # service-governance
 服务治理 influxdb,Hystrix,Turbine,zookeeper
-服务注册发现和下线
-服务线程隔离
+.服务注册发现和下线
+.服务线程隔离
 服务快速失败，熔断
 服务降级，返回默认值
 服务限流，针对不同调用来源
