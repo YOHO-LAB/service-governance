@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yoho.service.governance.mapper.AccountMapper">
+    <select id="queryAccountByUsernameAndPassword" resultType="com.yoho.service.governance.model.Account">
+        SELECT id,username,`password` FROM user_account WHERE username = #{username} AND `password` = #{password};
+    </select>
+
+    <select id="queryAccountByUsername" resultType="com.yoho.service.governance.model.Account">
+        SELECT id,username,`password` FROM user_account WHERE username = #{username};
+    </select>
+</mapper>

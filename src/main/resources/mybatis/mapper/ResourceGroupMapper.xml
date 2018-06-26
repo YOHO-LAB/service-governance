@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yoho.service.governance.mapper.ResourceGroupMapper">
+    <resultMap id="base" type="com.yoho.service.governance.model.ResourceGroup">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="group_name" property="groupName" jdbcType="VARCHAR"/>
+        <result column="group_desc" property="groupDesc" jdbcType="VARCHAR"/>
+        <result column="core_size" property="coreSize" jdbcType="INTEGER"/>
+        <result column="max_queue_size" property="maxQueueSize" jdbcType="INTEGER"/>
+        <result column="cloud" property="cloud" jdbcType="VARCHAR"/>
+    </resultMap>
+    <insert id="insert" parameterType="com.yoho.service.governance.model.ResourceGroup">
+        insert into resource_group (group_name,group_desc,core_size,max_queue_size,cloud)
+        values(#{groupName},#{groupDesc},#{coreSize},#{maxQueueSize},#{cloud});
+    </insert>
+
+    <update id="update" parameterType="com.yoho.service.governance.model.ResourceGroup">
+      update
+          resource_group
+      set
+          group_name=#{groupName},
+          group_desc=#{groupDesc},
+          core_size=#{coreSize},
+          max_queue_size=#{maxQueueSize}
+      where
+          id=#{id}
+    </update>
+
+    <delete id="delete" parameterType="com.yoho.service.governance.model.ResourceGroup">
+        delete from resource_group where id=#{id}
+    </delete>
+
+    <select id="queryByGroupName" parameterType="com.yoho.service.governance.model.ResourceGroup" resultMap="base">
+        select * from resource_group where  group_name=#{groupName} and cloud=#{cloud};
+    </select>
+
+    <select id="queryAll" parameterType="string" resultMap="base">
+        select * from resource_group where cloud=#{cloud} ;
+    </select>
+    <select id="queryById" parameterType="com.yoho.service.governance.model.ResourceGroup" resultMap="base">
+        select * from resource_group where id=#{id} ;
+    </select>
+
+</mapper>
