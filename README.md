@@ -1,5 +1,5 @@
 # service-governance
-服务治理 influxdb,Hystrix,Turbine,zookeeper
+服务治理 influxdb,Hystrix,Turbine,zookeeper</br>
 .服务注册发现和下线</br>
 .服务线程隔离</br>
 .服务快速失败，熔断</br>
@@ -13,6 +13,6 @@
 .服务监控</br>
 .服务延时分布 90 95 99，实时调用并发数，分钟曲线图，服务机器资源情况，gc，内存情况</br>
 .服务错误监控，告警策略设置</br>
-//TODO 服务调用拓扑关系图
-//TODO 服务调用链
-//TODO 服务自动伸缩
+//TODO 服务调用拓扑关系图</br>
+//TODO 服务调用链</br>
+//TODO 服务自动伸缩</br>
